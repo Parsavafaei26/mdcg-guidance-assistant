@@ -12,7 +12,7 @@ def load_questions(path=QUESTIONS):
     for r in rows:
         r["answerable"] = r["answerable"].strip().lower() == "yes"
         r["pages"] = {int(p) for p in r["gold_pages"].split(";") if p.strip()}
-        r["facts"] = [[alt.strip().lower() for alt in f.split("|")] for f in r["key_facts"].split(";") if f.strip()]
+        r["facts"] = [[normalise(alt.strip()) for alt in f.split("|")] for f in r["key_facts"].split(";") if f.strip()]
     return rows
 
 
@@ -40,8 +40,17 @@ def retrieval_scores(questions, chunks, retriever, ks=(1, 3, 5)):
     return out, rows
 
 
+DASHES = str.maketrans({"\u2010": "-", "\u2011": "-", "\u2012": "-", "\u2013": "-", "\u2014": "-",
+                        "\u00a0": " ", "\u202f": " ", "\u2019": "'", "\u2018": "'"})
+
+
+def normalise(text):
+    """Lower-case and replace typographic dashes, quotes and non-breaking spaces with plain ones."""
+    return text.translate(DASHES).lower()
+
+
 def fact_coverage(answer, facts):
-    text = answer.lower()
+    text = normalise(answer)
     found = [any(alt in text for alt in alts) for alts in facts]
     return sum(found) / len(found) if found else 0.0
 

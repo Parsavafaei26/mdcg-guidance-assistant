@@ -8,7 +8,7 @@ from pathlib import Path
 import streamlit as st
 
 from rag import ollama
-from rag.answer import answer
+from rag.answer import DEFAULT_TOP_K, answer
 from rag.evaluate import load_questions
 from rag.ingest import load_chunks, load_manifest
 from rag.retrieve import BM25, EmbeddingIndex, Hybrid, load_embeddings, tokens
@@ -75,25 +75,35 @@ with tab2:
         st.info("The answering model runs privately on the author's laptop (an open-source model through "
                 "Ollama), so it is not available in this online demo. Below are the answers it gave to the "
                 "test questions, exactly as produced.")
-        res_file = ROOT / "results" / "answers.json"
-        if res_file.exists():
-            saved = json.loads(res_file.read_text())
+        runs = sorted(p.parent.name for p in (ROOT / "results").glob("*/answers.json"))
+        if runs:
+            run = st.radio("Run", runs, index=runs.index("v1-top8") if "v1-top8" in runs else 0, horizontal=True,
+                           help="v1-top8 is the adopted setup; v1 and v2 are kept for comparison.")
+            saved = json.loads((ROOT / "results" / run / "answers.json").read_text())
             qs = {q["id"]: q for q in load_questions()}
             by_id = {c["chunk_id"]: c for c in chunks}
+            review = {}
+            if (ROOT / "results" / "human_review.csv").exists():
+                with open(ROOT / "results" / "human_review.csv", encoding="utf-8") as fh:
+                    review = {r["id"]: r for r in csv.DictReader(fh) if r["run"] == run}
             pick = st.selectbox("Test question", list(saved["results"]),
                                 format_func=lambda k: f"{k}: {qs[k]['question']}")
             r = saved["results"][pick]
-            st.markdown(f"**Answer** ({saved['model']}):  \n{r['answer']}")
+            st.markdown(f"**Answer** ({saved['model']}, prompt {saved['prompt']}, top {saved['top_k']} "
+                        f"passages):  \n{r['answer']}")
+            if pick in review:
+                v = review[pick]
+                st.markdown(f"**Human review:** {v['final_verdict']}" + (f" ({v['note']})" if v["note"] else ""))
+            st.markdown(f"**Reviewed reference answer:** {qs[pick]['gold_answer']}")
             for n, cid in enumerate(r["sources"], 1):
                 show_passage(n, by_id[cid])
-            st.markdown(f"**Reviewed reference answer:** {qs[pick]['gold_answer']}")
         else:
             st.warning("No saved answers yet: run scripts/evaluate.py on a computer with Ollama.")
     else:
         question = st.text_input("Your question", placeholder="e.g. Who uploads the SSCP to Eudamed?")
         if question:
             with st.spinner("Searching and answering locally ..."):
-                top = [chunks[i] for i, _ in retriever.search(question, k=5)]
+                top = [chunks[i] for i, _ in retriever.search(question, k=DEFAULT_TOP_K)]
                 r = answer(question, top)
             st.markdown(f"**Answer:**  \n{r['answer']}")
             for n, c in enumerate(r["sources"], 1):
@@ -101,9 +111,13 @@ with tab2:
             st.caption(f"{ollama.CHAT_MODEL} on this computer · {r['usage'].get('seconds', 0)} s")
 
 with tab3:
-    summary = ROOT / "results" / "summary.md"
-    st.markdown(summary.read_text().replace("# Evaluation summary", "") if summary.exists()
-                else "No results yet.")
+    parts = [ROOT / "results" / "retrieval.md", ROOT / "results" / "human_review.md"]
+    shown = [p.read_text() for p in parts if p.exists()]
+    st.markdown("\n\n".join(shown) if shown else "No results yet.")
+    auto = sorted((ROOT / "results").glob("*/summary.md"))
+    if auto:
+        with st.expander("Automatic scores (key-fact string matching; a rough guide only)"):
+            st.markdown("\n\n".join(p.read_text() for p in auto))
     st.markdown("Method, limits and the reviewed question set are described in the "
                 "[README](https://github.com/Parsavafaei26/mdcg-guidance-assistant).")
 

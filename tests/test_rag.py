@@ -178,3 +178,20 @@ def test_app_runs_without_a_local_model():
     at.text_input(key="search").input("PSUR frequency class IIb").run()
     assert not at.exception
     assert any("MDCG 2022-21" in m.value for m in at.markdown)
+
+
+# ---------------------------------------------------------------- human review
+def test_human_review_covers_every_saved_answer():
+    import csv
+    with open(ROOT / "results" / "human_review.csv", encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    qs = {q["id"]: q for q in E.load_questions()}
+    allowed = {True: {"correct", "partly", "wrong", "refused"}, False: {"correctly refused", "wrongly answered"}}
+    for run_dir in (ROOT / "results").glob("*/answers.json"):
+        saved = json.loads(run_dir.read_text())["results"]
+        verdicts = {r["id"]: r for r in rows if r["run"] == run_dir.parent.name}
+        assert set(verdicts) == set(saved) == set(qs), run_dir.parent.name
+        for qid, r in verdicts.items():
+            assert r["final_verdict"] in allowed[qs[qid]["answerable"]], (qid, r)
+            # a refusal verdict must match what the model actually did
+            assert (r["final_verdict"] in ("refused", "correctly refused")) == (not saved[qid]["covered"]), qid

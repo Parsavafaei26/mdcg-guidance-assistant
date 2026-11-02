@@ -1,0 +1,733 @@
+{
+  "tag": "v1",
+  "model": "granite4.2:8b",
+  "prompt": "v1",
+  "top_k": 5,
+  "retriever": "Hybrid (BM25 + embeddings)",
+  "summary": {
+    "answerable_n": 40,
+    "answered": 0.95,
+    "all_key_facts": 0.775,
+    "mean_fact_coverage": 0.8125,
+    "cited_gold_passage": 0.875,
+    "unanswerable_n": 6,
+    "correctly_refused": 1.0
+  },
+  "results": {
+    "Q01": {
+      "question": "What are the reporting timelines for a serious incident under the MDR?",
+      "covered": true,
+      "answer": "Under the MDR, a serious incident that did not involve a death or an unanticipated serious deterioration in a person's state of health must be reported immediately and no later than 15 calendar days after the awareness date of the serious incident (Article 87(3) MDR). For a serious incident involving death or an unanticipated serious deterioration, it must be reported immediately after a causal relationship is established or suspected, and no later than 2 calendar days after the awareness date (Article 87(3) MDR/Article 82(3) IVDR). The reporting period begins on the day after the awareness date (day\u202f0), i.e., day\u202f1, and timelines are calculated in calendar days (including weekends and public holidays), following Regulation (EEC, EURATOM) No\u202f1182/71 rules for periods.",
+      "sources": [
+        "MDCG 2023-3#038",
+        "MDCG 2023-3#012",
+        "MDCG 2023-3#039"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2037,
+        "output_tokens": 207,
+        "seconds": 24.98,
+        "done_reason": "stop"
+      }
+    },
+    "Q02": {
+      "question": "What is the difference between an 'incident' and a 'serious incident'?",
+      "covered": true,
+      "answer": "An 'incident' is any malfunction or deterioration in the characteristics or performance of a device made available on the market, including use-error due to ergonomic features, as well as any inadequacy in the information supplied by the manufacturer and any undesirable side-effect (Article 2(64) MDR/Article 2(67) IVDR). A 'serious incident' is any incident that directly or indirectly led, might have led, or might lead to any of the following: the death of a patient, user or other person; the temporary or permanent serious deterioration of a patient's, user's or other person's state of health; or a serious public health threat (as defined in Article 2(66) MDR).",
+      "sources": [
+        "MDCG 2023-3#006",
+        "MDCG 2019-16#049",
+        "MDCG 2023-3#007"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1915,
+        "output_tokens": 174,
+        "seconds": 15.13,
+        "done_reason": "stop"
+      }
+    },
+    "Q03": {
+      "question": "Who counts as the 'user' of a device in vigilance?",
+      "covered": true,
+      "answer": "In the context of vigilance, the 'user' includes any healthcare institution, healthcare professional, or layperson (e.g., caregiver, patient) who uses the device, or persons responsible for installing or maintaining the device.",
+      "sources": [
+        "MDCG 2023-3#023"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1630,
+        "output_tokens": 64,
+        "seconds": 9.1,
+        "done_reason": "stop"
+      }
+    },
+    "Q04": {
+      "question": "What is the difference between a use error and abnormal use?",
+      "covered": true,
+      "answer": "A 'use error' is when the user\u2019s action or lack thereof while using the device leads to a different result or outcome than expected by the user or intended by the manufacturer. It can be caused by failure to pay attention, memory lapses, mistakes during use, or lack of understanding. However, use errors caused by the device\u2019s ergonomic features qualify as incidents and must be reported if they meet serious incident criteria. 'Abnormal use' is the deliberate violation of the intended use of a device, such as off\u2011label use by a healthcare professional based on a medical decision.",
+      "sources": [
+        "MDCG 2023-3#024"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1734,
+        "output_tokens": 150,
+        "seconds": 13.21,
+        "done_reason": "stop"
+      }
+    },
+    "Q05": {
+      "question": "When does the clock start for serious incident reporting?",
+      "covered": true,
+      "answer": "The clock starts on the day after the manufacturer\u2019s awareness date of the potentially serious incident (i.e., day\u202f1), where the awareness date (day\u202f0) is the date the manufacturer is first made aware or receives information of the occurrence of the (potentially) serious incident. In the exceptional case where the manufacturer initially determines the incident is not reportable but later receives new information that makes it reportable, the reporting period begins on the date the manufacturer received that new information.",
+      "sources": [
+        "MDCG 2023-3#038",
+        "MDCG 2023-3#012",
+        "MDCG 2023-3#042",
+        "MDCG 2023-3#013"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1983,
+        "output_tokens": 129,
+        "seconds": 13.54,
+        "done_reason": "stop"
+      }
+    },
+    "Q06": {
+      "question": "Is a use error that is not caused by ergonomic features a reportable incident?",
+      "covered": true,
+      "answer": "A use error that is not caused by ergonomic features is not a reportable incident. Use errors caused by ergonomic features may be incidents if they meet the serious incident criteria (A\u2013C).",
+      "sources": [
+        "MDCG 2023-3#026",
+        "MDCG 2023-3#024",
+        "MDCG 2023-3#014",
+        "MDCG 2023-3#015"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1937,
+        "output_tokens": 74,
+        "seconds": 10.77,
+        "done_reason": "stop"
+      }
+    },
+    "Q07": {
+      "question": "Where should trend reports be sent?",
+      "covered": true,
+      "answer": "Trend reports should be reported to the competent authority(ies) of the Member State(s) in which the incidents occurred. The relevant competent authority is the competent authority of the Member State in which the serious incident occurred.",
+      "sources": [
+        "MDCG 2023-3#009"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1804,
+        "output_tokens": 63,
+        "seconds": 9.94,
+        "done_reason": "stop"
+      }
+    },
+    "Q08": {
+      "question": "How often must a PSUR be updated for class IIb and class III devices?",
+      "covered": true,
+      "answer": "For class IIb and class III devices, the PSUR must be prepared at least once every 12 months.",
+      "sources": [
+        "MDCG 2022-21#035",
+        "MDCG 2022-21#034",
+        "MDCG 2022-21#033"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1720,
+        "output_tokens": 47,
+        "seconds": 8.87,
+        "done_reason": "stop"
+      }
+    },
+    "Q09": {
+      "question": "How often must a PSUR be updated for a class IIa device?",
+      "covered": true,
+      "answer": "A PSUR must be prepared at least once every 24 months for a Class IIa device.",
+      "sources": [
+        "MDCG 2022-21#035",
+        "MDCG 2022-21#034",
+        "MDCG 2022-21#033"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1834,
+        "output_tokens": 52,
+        "seconds": 7.18,
+        "done_reason": "stop"
+      }
+    },
+    "Q10": {
+      "question": "Do class I devices need a PSUR?",
+      "covered": true,
+      "answer": "Class I devices do not require a PSUR. The guidance states that for a Class I device, the PSUR is not required (see Article 85 of EU 2017/745).",
+      "sources": [
+        "MDCG 2022-21#035"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1467,
+        "output_tokens": 66,
+        "seconds": 4.64,
+        "done_reason": "stop"
+      }
+    },
+    "Q11": {
+      "question": "When does the obligation to update a PSUR end?",
+      "covered": true,
+      "answer": "The obligation to update a PSUR ends when the overall lifetime of the device (model) has been achieved, i.e., when the time between placing the last manufactured device on the market and the end of the intended lifetime of that device has passed. This includes the shelf-life plus intended lifetime for single-use devices, and shelf-life plus intended lifetime for implants (e.g., 3 years shelf-life + 10 years intended lifetime = 13 years total).",
+      "sources": [
+        "MDCG 2022-21#017"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1883,
+        "output_tokens": 117,
+        "seconds": 12.54,
+        "done_reason": "stop"
+      }
+    },
+    "Q12": {
+      "question": "What must a PSUR summarise according to Article 86?",
+      "covered": true,
+      "answer": "According to Article 86 MDR, a PSUR must summarise the results and conclusions of the analysis of post-market surveillance data gathered as a result of the PMS Plan. It should also provide the conclusions of the benefit\u2011risk determination, the main findings of the Post\u2011Market Clinical Follow\u2011up (PMCF), the volume of sales of the device and an estimate of the size and other characteristics of the population using the device, and when practicable, the usage frequency of the device.",
+      "sources": [
+        "MDCG 2022-21#001",
+        "MDCG 2022-21#013"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1520,
+        "output_tokens": 130,
+        "seconds": 11.44,
+        "done_reason": "stop"
+      }
+    },
+    "Q13": {
+      "question": "What is the maximum lifetime period used for PSUR purposes for implantable devices?",
+      "covered": true,
+      "answer": "The maximum lifetime period used for PSUR purposes for implantable devices is 15 years.",
+      "sources": [
+        "MDCG 2022-21#016"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2211,
+        "output_tokens": 49,
+        "seconds": 11.12,
+        "done_reason": "stop"
+      }
+    },
+    "Q14": {
+      "question": "Which devices need a PMS report and which need a PSUR?",
+      "covered": true,
+      "answer": "Only class IIa, IIb and class III devices (including custom\u2011made devices of these classes) need a PSUR under the MDR. The PSUR is a periodic safety update report required for these device classes. A PMS report is not mentioned in the passages as a separate requirement; the PSUR summarizes results from the Post\u2011Market Surveillance Plan (PMS Plan).",
+      "sources": [
+        "MDCG 2022-21#011",
+        "MDCG 2022-21#001",
+        "MDCG 2022-21#032"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1959,
+        "output_tokens": 119,
+        "seconds": 13.01,
+        "done_reason": "stop"
+      }
+    },
+    "Q15": {
+      "question": "Should the PMS system be the same for every device?",
+      "covered": true,
+      "answer": "The PMS system does not need to be identical for every device. A PMS plan can cover a single device or a group of devices (e.g., devices with the same manufacturing process, design and intended purpose, or in the same device family). The plan should clearly state which devices are included within its scope. Methods and frequencies can be defined per plan, which may differ for different groups.",
+      "sources": [
+        "MDCG 2025-10#012"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1738,
+        "output_tokens": 99,
+        "seconds": 11.18,
+        "done_reason": "stop"
+      }
+    },
+    "Q16": {
+      "question": "Does the PMS guidance MDCG 2025-10 explain how to write a PSUR?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1772,
+        "output_tokens": 35,
+        "seconds": 5.81,
+        "done_reason": "stop"
+      }
+    },
+    "Q17": {
+      "question": "What are the duration-of-use categories used in classification?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1661,
+        "output_tokens": 35,
+        "seconds": 8.02,
+        "done_reason": "stop"
+      }
+    },
+    "Q18": {
+      "question": "What happens if several classification rules apply to the same device?",
+      "covered": true,
+      "answer": "If several classification rules apply to the same device based on its intended purpose, the strictest rule and sub-rule resulting in the higher classification determines the class for the device as a whole. The characteristic or combination of characteristics in accordance with the intended purpose that falls into the highest class determines the class for the device as a whole.",
+      "sources": [
+        "MDCG 2021-24#025"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1793,
+        "output_tokens": 84,
+        "seconds": 10.63,
+        "done_reason": "stop"
+      }
+    },
+    "Q19": {
+      "question": "How is 'continuous use' defined for classification?",
+      "covered": true,
+      "answer": "Continuous use means the entire duration of use of the same device without regard to temporary interruption of use during a procedure or temporary removal for purposes such as cleaning or disinfection of the device. Whether the interruption or removal is temporary shall be established in relation to the duration of the use prior to and after the period when the use is interrupted or the device removed.",
+      "sources": [
+        "MDCG 2021-24#010",
+        "MDCG 2021-24#011"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1788,
+        "output_tokens": 100,
+        "seconds": 11.36,
+        "done_reason": "stop"
+      }
+    },
+    "Q20": {
+      "question": "Which post-market document must a class I manufacturer prepare according to the classification guidance?",
+      "covered": true,
+      "answer": "According to the classification guidance, a class I manufacturer must prepare a post-market surveillance report (PMS report) as required by MDR Article 85.",
+      "sources": [
+        "MDCG 2021-24#008"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1595,
+        "output_tokens": 58,
+        "seconds": 8.64,
+        "done_reason": "stop"
+      }
+    },
+    "Q21": {
+      "question": "How is software that provides information for diagnostic or therapeutic decisions classified under Rule 11?",
+      "covered": true,
+      "answer": "Under Rule 11, software intended to provide information which is used to take decisions with diagnosis or therapeutic purposes is classified as class IIa, except if such decisions have an impact that may cause death or an irreversible deterioration of a person's state of health (class III), or a serious deterioration of a person's state of health or a surgical intervention (class IIb).",
+      "sources": [
+        "MDCG 2019-11#033",
+        "MDCG 2021-24#059",
+        "MDCG 2019-11#032",
+        "MDCG 2021-24#058",
+        "MDCG 2019-11#004"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1679,
+        "output_tokens": 105,
+        "seconds": 11.1,
+        "done_reason": "stop"
+      }
+    },
+    "Q22": {
+      "question": "How is software that monitors physiological processes classified?",
+      "covered": true,
+      "answer": "Software intended to monitor physiological processes is classified as class IIa, except if it is intended for monitoring of vital physiological parameters where the nature of variations of those parameters is such that it could result in immediate danger to the patient, in which case it is classified as class IIb. All other software is classified as class I.",
+      "sources": [
+        "MDCG 2021-24#060",
+        "MDCG 2019-11#033",
+        "MDCG 2021-24#058"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1930,
+        "output_tokens": 89,
+        "seconds": 11.61,
+        "done_reason": "stop"
+      }
+    },
+    "Q23": {
+      "question": "What class is software that drives or influences the use of a hardware device?",
+      "covered": true,
+      "answer": "Software that drives or influences the use of a hardware medical device falls within the same class as the hardware device. However, if the software is independent of any other device, it shall be classified in its own right, and the risk class shall not be lower than the risk class of the hardware medical device.",
+      "sources": [
+        "MDCG 2019-11#030"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1990,
+        "output_tokens": 87,
+        "seconds": 11.75,
+        "done_reason": "stop"
+      }
+    },
+    "Q24": {
+      "question": "Is software that only stores or communicates data a medical device?",
+      "covered": true,
+      "answer": "Software that only stores or communicates data (i.e., performs no analysis, decision support, or action beyond storage, archival, simple search, or lossless compression) would generally not be considered a medical device.",
+      "sources": [
+        "MDCG 2021-24#058",
+        "MDCG 2021-24#059",
+        "MDCG 2019-11#026"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1809,
+        "output_tokens": 67,
+        "seconds": 10.05,
+        "done_reason": "stop"
+      }
+    },
+    "Q25": {
+      "question": "What class is a mobile app that analyses heartbeat and detects abnormalities to inform a physician?",
+      "covered": true,
+      "answer": "A mobile app that analyses a user\u2019s heartbeat, detects abnormalities and informs a physician accordingly should be classified as class IIb per Rule 11(a), if the information provided by the software is intended to guide the physician in the diagnosis.",
+      "sources": [
+        "MDCG 2019-11#065"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1896,
+        "output_tokens": 75,
+        "seconds": 10.97,
+        "done_reason": "stop"
+      }
+    },
+    "Q26": {
+      "question": "What are the three characteristics that must be shown for clinical equivalence?",
+      "covered": true,
+      "answer": "The three characteristics that must be shown for clinical equivalence are clinical, technical, and biological characteristics.",
+      "sources": [
+        "MDCG 2020-5#015"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1940,
+        "output_tokens": 45,
+        "seconds": 9.78,
+        "done_reason": "stop"
+      }
+    },
+    "Q27": {
+      "question": "What extra requirement applies when claiming equivalence to a competitor's class III or implantable device?",
+      "covered": true,
+      "answer": "When claiming equivalence to a competitor's class III or implantable device, the manufacturer must have a contract in place that allows full access to the technical documentation on an ongoing basis, and the presumed equivalent device must be certified under the MDR (i.e., not certified under the Directives 93/42/EEC or 90/385/EEC).",
+      "sources": [
+        "MDCG 2020-5#021",
+        "MDCG 2020-5#020"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2208,
+        "output_tokens": 104,
+        "seconds": 13.44,
+        "done_reason": "stop"
+      }
+    },
+    "Q28": {
+      "question": "Can parts of different devices be combined to claim equivalence?",
+      "covered": true,
+      "answer": "Yes, parts of different devices can be combined to claim equivalence in exceptional cases, provided all technical, biological and clinical characteristics are same/similar and the devices in the system do not affect the safety and performance of each other. The combination must be duly investigated and documented.",
+      "sources": [
+        "MDCG 2020-5#017"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1876,
+        "output_tokens": 80,
+        "seconds": 10.97,
+        "done_reason": "stop"
+      }
+    },
+    "Q29": {
+      "question": "Which devices are exempt from clinical investigations under Article 61(6)?",
+      "covered": true,
+      "answer": "Devices that have been previously marketed under Directive 90/385/EEC or Directive 93/42/EEC (legacy devices) and devices that have been demonstrated to be equivalent to devices previously marketed (well-established technologies, WET).",
+      "sources": [
+        "MDCG 2020-6#007"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1531,
+        "output_tokens": 70,
+        "seconds": 8.98,
+        "done_reason": "stop"
+      }
+    },
+    "Q30": {
+      "question": "Are complaints and vigilance data high-quality clinical evidence for legacy devices?",
+      "covered": true,
+      "answer": "Complaints and vigilance data are not generally considered a high-quality source of clinical data for legacy devices. However, they may be useful for identifying safety trends or performance issues.",
+      "sources": [
+        "MDCG 2020-6#033",
+        "MDCG 2020-6#018",
+        "MDCG 2020-6#034"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1996,
+        "output_tokens": 61,
+        "seconds": 10.63,
+        "done_reason": "stop"
+      }
+    },
+    "Q31": {
+      "question": "Which devices need a summary of safety and clinical performance (SSCP)?",
+      "covered": true,
+      "answer": "Implantable devices and class III devices (other than custom-made or investigational devices) need a summary of safety and clinical performance (SSCP).",
+      "sources": [
+        "MDCG 2019-9#001",
+        "MDCG 2019-9#034",
+        "MDCG 2019-9#036"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1913,
+        "output_tokens": 56,
+        "seconds": 11.32,
+        "done_reason": "stop"
+      }
+    },
+    "Q32": {
+      "question": "Who uploads the SSCP to Eudamed?",
+      "covered": true,
+      "answer": "The NB (Notified Body) uploads the SSCP to Eudamed. The NB is the only actor that can manage the SSCPs in Eudamed.",
+      "sources": [
+        "MDCG 2019-9#013"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1805,
+        "output_tokens": 59,
+        "seconds": 10.84,
+        "done_reason": "stop"
+      }
+    },
+    "Q33": {
+      "question": "Into which languages should the SSCP be translated?",
+      "covered": true,
+      "answer": "The SSCP should be translated into the languages accepted in the Member States where the device is envisaged to be sold. If the selection of languages for the SSCP does not include English, then an English translation should also be provided.",
+      "sources": [
+        "MDCG 2019-9#014",
+        "MDCG 2019-9#005",
+        "MDCG 2019-9#006"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1844,
+        "output_tokens": 71,
+        "seconds": 10.27,
+        "done_reason": "stop"
+      }
+    },
+    "Q34": {
+      "question": "Which MDR requirements apply to legacy devices?",
+      "covered": true,
+      "answer": "The MDR requirements that apply to legacy devices are those relating to post-market surveillance, market surveillance, vigilance, registration of economic operators and of devices (Article 120(3d) MDR). These include the additional requirements in accordance with Article 120(3d) MDR, and for determining risk\u2011class\u2011dependent requirements (e.g. Articles 85 or 86), the legacy device\u2019s risk classification under the MDD should be used. Other MDR requirements (e.g. Articles 15, 16(3) and (4), 188, 199, 2510, 2711, 32) are in principle not applicable to legacy devices, although economic operators may choose to follow them if they wish.",
+      "sources": [
+        "MDCG 2021-25#006",
+        "MDCG 2021-25#009",
+        "MDCG 2021-25#008",
+        "MDCG 2021-25#014",
+        "MDCG 2021-25#004"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2669,
+        "output_tokens": 186,
+        "seconds": 19.36,
+        "done_reason": "stop"
+      }
+    },
+    "Q35": {
+      "question": "Does the UDI requirement (Article 27) apply to legacy devices?",
+      "covered": true,
+      "answer": "The UDI requirement (Article 27) does not apply to legacy devices.",
+      "sources": [
+        "MDCG 2021-25#013",
+        "MDCG 2021-25#014"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2551,
+        "output_tokens": 37,
+        "seconds": 12.47,
+        "done_reason": "stop"
+      }
+    },
+    "Q36": {
+      "question": "What is the aim of a PMCF plan?",
+      "covered": true,
+      "answer": "The aim of a PMCF plan is to confirm the safety and performance of the medical device, including clinical benefit if applicable, identify previously unknown side\u2011effects and monitor identified side\u2011effects and contraindications, identify and analyse emergent risks on the basis of factual evidence, ensure the continued acceptability of the benefit\u2011risk ratio, and identify possible systematic misuse or off\u2011label use of the device.",
+      "sources": [
+        "MDCG 2020-7#001"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1918,
+        "output_tokens": 108,
+        "seconds": 12.71,
+        "done_reason": "stop"
+      }
+    },
+    "Q37": {
+      "question": "Which documents should the conclusions of the PMCF evaluation report feed into?",
+      "covered": true,
+      "answer": "The conclusions of the PMCF evaluation report shall be taken into account in the clinical evaluation, the risk management documentation, the post market surveillance plan and the SSCP, if applicable.",
+      "sources": [
+        "MDCG 2020-8#006",
+        "MDCG 2020-8#001"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2004,
+        "output_tokens": 57,
+        "seconds": 10.7,
+        "done_reason": "stop"
+      }
+    },
+    "Q38": {
+      "question": "Who is responsible for cybersecurity of medical devices in a hospital?",
+      "covered": true,
+      "answer": "In a hospital, healthcare and medical professionals (including doctors, nurses, radiologists, etc.) are responsible for using medical devices for their intended purposes, and operators are responsible for procuring security information and maintaining security during operation. Patients and consumers are encouraged to follow cyber\u2011smart behaviour. The manufacturer provides security information (e.g., Instructions for Use, MDS2) and must be notified of suspected security events.\",",
+      "sources": [
+        "MDCG 2019-16#019",
+        "MDCG 2019-16#020",
+        "MDCG 2019-16#059"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1669,
+        "output_tokens": 110,
+        "seconds": 11.47,
+        "done_reason": "stop"
+      }
+    },
+    "Q39": {
+      "question": "What does CIA stand for in medical device cybersecurity?",
+      "covered": true,
+      "answer": "In medical device cybersecurity, CIA stands for Confidentiality, Integrity and Availability.",
+      "sources": [
+        "MDCG 2019-16#037"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1850,
+        "output_tokens": 41,
+        "seconds": 14.98,
+        "done_reason": "stop"
+      }
+    },
+    "Q40": {
+      "question": "Why does cybersecurity need maintenance after the device is on the market?",
+      "covered": true,
+      "answer": "Cybersecurity maintenance is required because software security can change rapidly due to new vulnerabilities or attack vectors, and without ongoing security maintenance the device may become insecure and possibly unsafe as a consequence of newly emerging vulnerabilities or novel attack methods. The manufacturer should put in place a process to gather post\u2011market security information and implement corrective actions as risks evolve.",
+      "sources": [
+        "MDCG 2019-16#037"
+      ],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1923,
+        "output_tokens": 99,
+        "seconds": 12.13,
+        "done_reason": "stop"
+      }
+    },
+    "U01": {
+      "question": "How much does a notified body charge to certify a class III device under the MDR?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2029,
+        "output_tokens": 35,
+        "seconds": 9.79,
+        "done_reason": "stop"
+      }
+    },
+    "U02": {
+      "question": "What is the FDA review timeline for a 510(k) submission?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1927,
+        "output_tokens": 35,
+        "seconds": 11.17,
+        "done_reason": "stop"
+      }
+    },
+    "U03": {
+      "question": "By what date must devices carry the UKCA mark to be sold in Great Britain?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2195,
+        "output_tokens": 27,
+        "seconds": 9.99,
+        "done_reason": "stop"
+      }
+    },
+    "U04": {
+      "question": "What financial penalties can Member States impose for MDR non-compliance?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 1919,
+        "output_tokens": 27,
+        "seconds": 8.85,
+        "done_reason": "stop"
+      }
+    },
+    "U05": {
+      "question": "What does HIPAA require for the protection of medical device data?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2067,
+        "output_tokens": 27,
+        "seconds": 9.59,
+        "done_reason": "stop"
+      }
+    },
+    "U06": {
+      "question": "What does ISO 13485 clause 7.3 require for design and development?",
+      "covered": false,
+      "answer": "The provided MDCG guidance does not cover this.",
+      "sources": [],
+      "invalid_citations": [],
+      "usage": {
+        "prompt_tokens": 2552,
+        "output_tokens": 27,
+        "seconds": 11.79,
+        "done_reason": "stop"
+      }
+    }
+  }
+}
